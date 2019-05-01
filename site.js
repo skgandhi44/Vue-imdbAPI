@@ -94,17 +94,17 @@ const vue_app = new Vue({
                   }
 
                   return ''.concat(month, ' ', day, ', ', year);
-            }
+            },
             
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
-            //
-            // Vue: like = function (index) {
-            //       vue_app.movies[index].likes++;
-            // },
-            //
-            // Vue: dislike = function (index) {
-            //       vue_app.movies[index].dislikes--;
-            // }
+
+            like: function (index) {
+                  this.movies[index].likes +=1;
+            },
+
+            dislike: function (index) {
+                  this.movies[index].dislikes +=1;
+            }
       }
 });
 	
