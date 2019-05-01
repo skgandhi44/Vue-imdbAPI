@@ -35,6 +35,8 @@ const vue_app = new Vue({
       data: {
             title: "IMDB + Shivam Top\'s 8 Movies",
             owner: "Shivam Gandhi",
+            github: "https://github.com/skgandhi44/is219gandhi-p3",
+
             // This holds your movies.json data.
             movies: []
 
