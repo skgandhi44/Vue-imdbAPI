@@ -2,6 +2,7 @@
 // 
 */
 
+
 /* NOTE: MOVIES.JSON CONTAINS A LIST OF MOVIES AND ACCOMPANYING METADATA
 //    
 //    They are in the following format:
@@ -30,15 +31,31 @@ const vue_app = new Vue({
                   this.movies = json
             })
       },
+
       data: {
+            title: "IMDB + Shivam Top\'s 8 Movies",
+            owner: "Shivam Gandhi",
             // This holds your movies.json data.
             movies: []
 
+
+
             /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
+
+
       },
+
       methods: {
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+            //
+            // Vue: like = function (index) {
+            //       vue_app.movies[index].likes++;
+            // },
+            //
+            // Vue: dislike = function (index) {
+            //       vue_app.movies[index].dislikes--;
+            // }
       }
-})
+});
 	
 
