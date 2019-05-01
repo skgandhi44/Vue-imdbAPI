@@ -40,24 +40,24 @@
 	        <div class="col-md-6"  v-for = "movie in movies">
 	            <div class="thumbnail">
 
-						<img class="poster" v-bind:src="movie.posters[movie.posterindex]" @click="posterClick(index)"/>
-						<div class="imageInfo" v-model.number="movie.posterindex">{{movie.posterindex + 1}} of {{movie.posters.length}}</div>
+                    <img class="poster" v-bind:src="movie.posters[movie.posterindex]" @click="posterClick(index)"/>
+                    <div class="imageInfo" v-model.number="movie.posterindex">{{movie.posterindex + 1}} of {{movie.posters.length}}</div>
 
 
-						<p class="title">{{movie.title}} ({{movie.country}})</p>
+                    <p class="title">{{movie.title}} ({{movie.country}})</p>
 
-						<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movie.iscore}} </p>
+                    <p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movie.iscore}} </p>
 
-						<!--<p class="runtime">Runtime: {{timeText(movie.runtime)}}</p>-->
+                    <!--<p class="runtime" v-bind:value="movie.runtime"> Runtime: {{ timeText(movie.runtime) }}</p>-->
 
-						<p class="released">Released: {{movie.released}} | Rated: {{movie.rating}}</p>
+                    <p class="released" v-bind:value="movie.released">Released: {{movie.released}} | Rated: {{movie.rating}}</p>
 
-						<p class="websites">Websites: <a scr = "{{movie.imdb}}"> IMDB </a> | <a src = "{{movie.website}}"> Official </a></p>
+                    <p class="websites">Websites: <a scr = "{{movie.imdb}}"> IMDB </a> | <a src = "{{movie.website}}"> Official </a></p>
 
-			            <div class="social">
-			              <p src = "like($index)" class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movie.likes}} </p>
-			              <p src = "dislike($index)" class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movie.dislikes}} </p>
-			            </div>
+                    <div class="social">
+                        <p v-bind:src = "movie.likes" @click="like(index)" class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movie.likes}} </p>
+                        <p v-bind:src = "movie.dislike" @click="like(index)" class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movie.dislikes}} </p>
+                    </div>
 	            </div> 
 	        </div>
 
