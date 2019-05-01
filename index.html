@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
 	<title>IS219 Gallery (Project 3)</title>
 
@@ -22,12 +22,12 @@
 </head>
 
   <body>
-	<div class="container">
+	<div class="container" id = "vue_app">
 
 	    <div class="header">
 		    
-	      <div class="container">
-	        <h1 id="app_title">IMDB + Shivam Top's 8 Movies</h1>
+	      <div>
+	        <h1 id="app_title">{{title}}</h1>
 	      </div>
 	      
 	    </div>
@@ -37,23 +37,23 @@
 
 	      <div class="container">
 
-	        <div class="col-md-6"> 
+	        <div class="col-md-6"  v-for = "movie in movies">
 	            <div class="thumbnail">
 
-						<img class="poster" src="{{movie.posters[movie.posterindex]}}" v-on:click="posterClick($index)"/>
+						<img class="poster" v-bind:src="movie.posters[movie.posterindex]" v-on:click="posterClick($index)"/>
 
 						<div class="imageInfo">{{movie.posterindex + 1}} of {{movie.posters.length}}</div>
-						
+
 						<p class="title">{{movie.title}} ({{movie.country}})</p>
 
 						<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movie.iscore}} </p>
 
-						<p class="runtime">Runtime: {{timeText(movie.runtime)}}</p>
+						<!--<p class="runtime">Runtime: {{timeText(movie.runtime)}}</p>-->
 
 						<p class="released">Released: {{movie.released}} | Rated: {{movie.rating}}</p>
 
 						<p class="websites">Websites: <a scr = "{{movie.imdb}}"> IMDB </a> | <a src = "{{movie.website}}"> Official </a></p>
-						
+
 			            <div class="social">
 			              <p src = "like($index)" class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movie.likes}} </p>
 			              <p src = "dislike($index)" class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movie.dislikes}} </p>
@@ -68,7 +68,7 @@
 	      <div class="container">
 			<a id="github" class="btn btn-lg btn-warning">
 				<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>
-				{{owner}}
+				{{owner}} {{github}}
 	  		</a>
 	      </div>
 	    </div>
