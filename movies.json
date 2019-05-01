@@ -68,5 +68,47 @@
             "likes": 812,
             "dislikes": 101,
             "posterindex": 0
+      },
+      {
+            "title": "Avenger Endgame",
+            "iscore": 9.0,
+            "rating": "PG-13",
+            "runtime": 182,
+            "released": [2019, 4, 26],
+            "country": "USA",
+            "posters": ["img/avengers1.jpg", "img/avengers2.jpg"],
+            "imdb": "https://www.imdb.com/title/tt4154796/?ref_=nv_sr_1?ref_=nv_sr_1",
+            "website": "http://www.42entertainment.com/work/whysoserious",
+            "likes": 5000,
+            "dislikes": 234,
+            "posterindex": 0
+      },
+      {
+            "title": "Captian America Civil War",
+            "iscore": 7.8,
+            "rating": "PG-13",
+            "runtime": 147,
+            "released": [2016, 5, 6],
+            "country": "USA",
+            "posters": ["img/civilwar1.jpg", "img/civilwar2.jpg"],
+            "imdb": "https://www.imdb.com/title/tt3498820/?ref_=nv_sr_1?ref_=nv_sr_1",
+            "website": "http://www.42entertainment.com/work/whysoserious",
+            "likes": 1143,
+            "dislikes": 345,
+            "posterindex": 0
+      },
+      {
+            "title": "Dunkirk",
+            "iscore": 7.9,
+            "rating": "PG-13",
+            "runtime": 107,
+            "released": [2017, 7, 21],
+            "country": "USA",
+            "posters": ["img/dunkirk1.jpg", "img/dunkirk2.jpg"],
+            "imdb": "https://www.imdb.com/title/tt5013056/?ref_=nv_sr_1?ref_=nv_sr_1",
+            "website": "http://www.42entertainment.com/work/whysoserious",
+            "likes": 758,
+            "dislikes": 108,
+            "posterindex": 0
       }
 ]
