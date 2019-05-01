@@ -40,9 +40,9 @@
 	        <div class="col-md-6"  v-for = "movie in movies">
 	            <div class="thumbnail">
 
-						<img class="poster" v-bind:src="movie.posters[movie.posterindex]" v-on:click="posterClick($index)"/>
+						<img class="poster" v-bind:src="movie.posters[movie.posterindex]" @click="posterClick(index)"/>
+						<div class="imageInfo" v-model.number="movie.posterindex">{{movie.posterindex + 1}} of {{movie.posters.length}}</div>
 
-						<div class="imageInfo">{{movie.posterindex + 1}} of {{movie.posters.length}}</div>
 
 						<p class="title">{{movie.title}} ({{movie.country}})</p>
 
