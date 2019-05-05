@@ -44,12 +44,11 @@ const vue_app = new Vue({
 
             /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
 
-
       },
 
       methods: {
             
-            makeTextData: function (dataArray) {
+            makeTextDate: function (dataArray) {
                   let year = dataArray[0];
                   let day = dataArray[2];
                   let month = dataArray[1];
@@ -94,6 +93,15 @@ const vue_app = new Vue({
                   }
 
                   return ''.concat(month, ' ', day, ', ', year);
+            },
+
+            posterClick: function(index){
+                  if(this.movies[index].posterindex < (this.movies[index].posters.length -1)){
+                        this.movies[index].posterindex +=1;
+
+                  } else {
+                        this.movies[index].posterindex = 0;
+                  }
             },
             
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
