@@ -112,6 +112,10 @@ const vue_app = new Vue({
 
             dislike: function (index) {
                   this.movies[index].dislikes +=1;
+            },
+
+            timeText: function (minutes) {
+                  return Math.floor(minutes / 60) + 'h '+ minutes % 60 + 'm';
             }
       }
 });
