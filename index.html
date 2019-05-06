@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type='text/css' href="style.css"/>
 	<link rel="stylesheet" type='text/css' href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" type='text/css' href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -17,19 +17,19 @@
 
 	<!-- Javascript Framework (e.g., vue.js) (ADD HERE) -->
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	
-	
+
+
 </head>
 
   <body>
 	<div class="container" id = "vue_app">
 
 	    <div class="header">
-		    
+
 	      <div>
 	        <h1 id="app_title">{{title}}</h1>
 	      </div>
-	      
+
 	    </div>
 
 
@@ -37,11 +37,14 @@
 
 	      <div class="container">
 
-	        <div class="col-md-6"  v-for = "movie in movies">
+	        <div class="col-md-6"  v-for = "(movie, index) in movies" :key="index">
 	            <div class="thumbnail">
 
                     <img class="poster" v-bind:src="movie.posters[movie.posterindex]" @click="posterClick(index)"/>
-                    <div class="imageInfo" v-model.number="movie.posterindex">{{movie.posterindex + 1}} of {{movie.posters.length}}</div>
+
+					<div class="imageInfo" v-model.number="movie.posterindex">
+						{{ movie.posterindex + 1 }} of {{ movies[index].posters.length }}
+					</div>
 
 
                     <p class="title">{{movie.title}} ({{movie.country}})</p>
@@ -50,15 +53,15 @@
 
                     <!--<p class="runtime" v-bind:value="movie.runtime"> Runtime: {{ timeText(movie.runtime) }}</p>-->
 
-                    <p class="released" v-bind:value="movie.released">Released: {{movie.released}} | Rated: {{movie.rating}}</p>
+                    <p class="released" v-bind:value="movie.released">Released: {{makeTextDate(movie.released)}} | Rated: {{movie.rating}}</p>
 
-                    <p class="websites">Websites: <a scr = "{{movie.imdb}}"> IMDB </a> | <a src = "{{movie.website}}"> Official </a></p>
+                    <p class="websites">Websites: <a v-bind:href="movie.imdb"> IMDB </a> | <a v-bind:href="movie.website">Website</a></p>
 
-                    <div class="social">
-                        <p v-bind:src = "movie.likes" @click="like(index)" class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movie.likes}} </p>
-                        <p v-bind:src = "movie.dislike" @click="like(index)" class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movie.dislikes}} </p>
+                        <div class="social">
+                        <p v-bind:src="movie.likes" @click="like(index)" class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movie.likes}} </p>
+                        <p v-bind:src="movie.dislike" @click="dislike(index)" class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movie.dislikes}} </p>
                     </div>
-	            </div> 
+	            </div>
 	        </div>
 
 	      </div>
@@ -73,10 +76,10 @@
 	      </div>
 	    </div>
 	</div>
-  
+
   	<!-- This load the Vue.js code -->
 	<script type="text/javascript" src="site.js"></script>
-	 
-  
+
+
 </body>
 </html>
